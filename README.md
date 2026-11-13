@@ -1,10 +1,10 @@
 Chat with a local ai model running on your PC over localhost.
 
-##compile:
+#compile:
 
 cl.exe chat.c ws2_32.lib
 
-##Usage:
+#Usage:
 
 ./chat.exe will drop you into a command line chat
 
