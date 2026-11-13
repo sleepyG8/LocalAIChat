@@ -4,7 +4,7 @@
 // Sleepy 2026 
 
 // You can use this code in your projects but give credit 
-// where it is do
+// wher eit is do
 
 // wrote this up in about an hour to communicate with 
 // a local model over localhost
@@ -24,6 +24,7 @@
 
 #define model "qwen2.5-coder-1.5b-instruct-generic-gpu:4"               // will need to put your model name
 #define portNum 59325                                                   // port number cmd: (foundry server status)
+#define portchar "59325"
 
 int main() {
 
@@ -66,12 +67,12 @@ int main() {
     const char string[4096];
     snprintf(string, sizeof(string),
     "POST /v1/chat/completions HTTP/1.1\r\n"
-    "Host: 127.0.0.1:59325\r\n"
+    "Host: 127.0.0.1:%lu\r\n"
     "Content-Type: application/json\r\n"
     "Content-Length: %lu\r\n"
     "\r\n"
     "%s", 
-    strlen(sendData), sendData);
+    portchar, strlen(sendData), sendData);
 
     if (send(sock, string, strlen(string), 0) == -1) {
         printf("Error sending\n");
