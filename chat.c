@@ -67,7 +67,7 @@ int main() {
     const char string[4096];
     snprintf(string, sizeof(string),
     "POST /v1/chat/completions HTTP/1.1\r\n"
-    "Host: 127.0.0.1:%lu\r\n"
+    "Host: 127.0.0.1:%s\r\n"
     "Content-Type: application/json\r\n"
     "Content-Length: %lu\r\n"
     "\r\n"
